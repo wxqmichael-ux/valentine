@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For my love ❤️</title>
+<title>Для моей любимой ❤️</title>
 
 <style>
 body {
@@ -21,10 +22,11 @@ body {
 
 .container {
     z-index: 2;
+    padding: 20px;
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 48px;
     text-shadow: 0 0 25px rgba(255,255,255,0.9);
 }
 
@@ -39,11 +41,16 @@ button {
     border-radius: 30px;
     cursor: pointer;
     margin: 10px;
+    transition: 0.3s;
 }
 
 .yes {
     background: white;
     color: #ff4d6d;
+}
+
+.yes:hover {
+    transform: scale(1.1);
 }
 
 .no {
@@ -52,10 +59,16 @@ button {
     position: absolute;
 }
 
+.music-btn {
+    background: #ffffff;
+    color: #ff4d6d;
+}
+
 .message {
-    font-size: 28px;
-    margin-top: 20px;
+    font-size: 26px;
+    margin-top: 25px;
     display: none;
+    text-shadow: 0 0 15px pink;
 }
 
 .heart {
@@ -70,7 +83,7 @@ button {
 }
 
 .cat {
-    width: 100px;
+    width: 110px;
     position: fixed;
     bottom: 15px;
     right: 15px;
@@ -81,18 +94,27 @@ button {
 <body>
 
 <div class="container">
-    <h1>Алина, будешь моей Валентинкой? 💖</h1>
+    <h1>Любимая, будешь моей Валентинкой? 💖</h1>
 
     <div class="buttons">
         <button class="yes" onclick="sayYes()">ДА 💞</button>
         <button class="no" onmouseover="moveButton(this)">НЕТ 😏</button>
+        <br>
+        <button class="music-btn" onclick="playMusic()">Включить нашу песню 🎵</button>
     </div>
 
     <div class="message" id="loveMessage">
-        Я знал, что ты скажешь да 😌❤️<br>
-        Ты делаешь мою жизнь особенной.
+        Я знал, что ты скажешь да, любовь моя ❤️<br>
+        Ты — самое нежное и светлое, что есть в моей жизни.<br>
+        Спасибо, что ты у меня есть.<br><br>
+        Я хочу быть рядом с тобой и делать тебя счастливой каждый день.
     </div>
 </div>
+
+<!-- Музыка -->
+<audio id="music">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 
 <img src="https://media.tenor.com/6XJjG3J5Q3kAAAAi/cute-cat.gif" class="cat">
 
@@ -104,7 +126,55 @@ function moveButton(button) {
 
 function sayYes() {
     document.getElementById("loveMessage").style.display = "block";
+    <!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Аниме закат</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to top, #ff9966, #ff5e62, #1e3c72);
+}
+
+/* Солнце */
+.sun {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, #ffd27f, #ff8c42);
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: sunset 15s linear infinite;
+}
+
+/* Анимация заката */
+@keyframes sunset {
+    0% {
+        bottom: 60%;
+    }
+    100% {
+        bottom: -20%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="sun"></div>
+
+</body>
+</html>
     createHearts();
+}
+
+function playMusic() {
+    document.getElementById("music").play();
 }
 
 function createHearts() {
@@ -122,8 +192,7 @@ function createHearts() {
     }, 300);
 }
 
-// 🔒 скрытое сообщение
-console.log("Ты нашла секретное сообщение 💌 Я люблю тебя.");
+console.log("Секретное сообщение: я люблю тебя ❤️");
 </script>
 
 </body>
